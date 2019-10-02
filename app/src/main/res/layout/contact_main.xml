@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ActivityContact"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.contactlist.ContactActivity">
+
+<!--  FOCUS HACK  -->
+    <LinearLayout
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="0px"
+        android:layout_height="0px"
+        android:background="@color/contact_main_background"/>
+
+    <RelativeLayout
+        android:id="@+id/navbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/navbar_background">
+
+        <ImageButton
+            android:id="@+id/imageButtonList"
+            android:layout_width="102dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/icons8_add_list_64"
+            app:layout_constraintEnd_toStartOf="@+id/imageButtonMap"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/imageButtonMap"
+            android:layout_width="114dp"
+            android:layout_height="93dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/icons8_map_marker_100" />
+
+        <ImageButton
+            android:id="@+id/imageButtonSettings"
+            android:layout_width="103dp"
+            android:layout_height="89dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginEnd="16dp"
+            android:layout_toEndOf="@+id/imageButtonMap"
+            android:src="@drawable/icons8_settings_100" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/toolbar_background">
+
+        <ToggleButton
+            android:id="@+id/toggleButtonEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp" />
+
+        <Button
+            android:id="@+id/buttonSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="Save" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/navbar"
+        android:layout_below="@id/toolbar"
+        android:layout_alignParentStart="true"
+        android:background="@mipmap/hulk">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textContact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/contact" />
+
+            <EditText
+                android:id="@+id/editName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textContact"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"
+                android:ems="14"
+                android:imeOptions="actionNext"
+                android:inputType="textCapWords">
+
+                <requestFocus />
+            </EditText>
+
+            <!--ADDRESS-->
+            <TextView
+            android:id="@+id/textAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/editName"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/address" />
+
+            <EditText
+                android:id="@+id/editAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textAddress"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"
+                android:ems="15"
+                android:imeOptions="actionNext"
+                android:inputType="textCapWords">
+            </EditText>
+
+            <!--CITY-->
+            <EditText
+                android:id="@+id/editCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/editAddress"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"
+                android:ems="8"
+                android:imeOptions="actionNext"
+                android:nextFocusDown="@id/editState"
+                android:inputType="textCapWords">
+            </EditText>
+
+            <!--STATE-->
+            <EditText
+                android:id="@+id/editState"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/editCity"
+                android:layout_alignBottom="@id/editCity"
+                android:ems="2"
+                android:maxLength="2"
+                android:imeOptions="actionNext"
+                android:nextFocusDown="@id/editZipcode"
+                android:inputType="textCapCharacters">
+            </EditText>
+
+            <!--ZIP CODE-->
+            <EditText
+                android:id="@+id/editZipcode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/editState"
+                android:layout_alignBottom="@id/editState"
+                android:ems="5"
+                android:maxLength="5"
+                android:imeOptions="actionNext"
+                android:nextFocusDown="@id/editHome"
+                android:inputType="numberSigned">
+            </EditText>
+
+            <!--HOME PHONES-->
+            <TextView
+                android:id="@+id/textHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/editCity"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/homePhone" />
+            <EditText
+                android:id="@+id/editHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"
+                android:layout_below="@+id/textHome"
+                android:ems="7"
+                android:maxLength="14"
+                android:imeOptions="actionNext"
+                android:nextFocusDown="@+id/editCell"
+                android:inputType="phone">
+            </EditText>
+
+            <!--CELL PHONES-->
+            <TextView
+                android:id="@+id/textCell"
+                android:text="@string/cellPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/textHome"
+                android:layout_alignStart="@+id/editCell" />
+            <EditText
+                android:id="@+id/editCell"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/editHome"
+                android:layout_alignBottom="@+id/editHome"
+                android:ems="7"
+                android:maxLength="14"
+                android:imeOptions="actionNext"
+                android:nextFocusDown="@+id/editEmail"
+                android:inputType="phone">
+            </EditText>
+
+            <!--EMAIL-->
+            <TextView
+                android:id="@+id/textEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/editHome"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/Emailaddress" />
+
+            <EditText
+                android:id="@+id/editEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textEmail"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"
+                android:ems="13"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress">
+            </EditText>
+
+            <!--BIRTHDAY-->
+            <TextView
+                android:id="@+id/textBday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/editEmail"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/birthday" />
+            <TextView
+                android:id="@+id/textBirthday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_alignBottom="@+id/textBday"
+                android:layout_toEndOf="@+id/textBday"
+                android:text="@string/date" />
+
+            <Button
+                android:id="@+id/btnBirthday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/change"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp"
+                android:layout_alignBaseline="@+id/textBirthday"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</android.widget.RelativeLayout>

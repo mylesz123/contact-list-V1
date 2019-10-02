@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#fc6435</color>
+    <color name="colorPrimaryDark">#cf491f</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="navbar_background">#cf2b1f</color>
+    <color name="toolbar_background">#bebebe</color>
+    <color name="dialog_button_color">#26C6DA</color>
+    <color name="contact_main_background">#fcba03</color>
+    <color name="burr">#26C6DF</color>
+    <color name="hot">#9932CC</color>
+    <color name="system_transparent">#00000000</color>
+    <color name="system_red">#e31219</color>
+    <color name="color1">#33d667</color>
+    <color name="color2">#7f33d6</color>
+    <color name="color3">#fcd228</color>
+    <color name="color4">#8189e3</color>
+
+
+</resources>

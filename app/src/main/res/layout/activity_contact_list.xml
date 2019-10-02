@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.contactlist.ContactActivity">
+
+    <RelativeLayout
+        android:id="@+id/navbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/navbar_background"
+        android:layout_alignParentBottom="true">
+
+        <ImageButton
+            android:id="@+id/imageButtonList"
+            android:layout_width="102dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/icons8_add_list_64"
+            app:layout_constraintEnd_toStartOf="@+id/imageButtonMap"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/imageButtonMap"
+            android:layout_width="114dp"
+            android:layout_height="93dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/icons8_map_marker_100" />
+
+        <ImageButton
+            android:id="@+id/imageButtonSettings"
+            android:layout_width="103dp"
+            android:layout_height="89dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginEnd="16dp"
+            android:layout_toEndOf="@+id/imageButtonMap"
+            android:src="@drawable/icons8_settings_100" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/toolbar_background"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" >
+
+        <Button
+            android:id="@+id/buttonDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="-1dp"
+            android:text="Delete" />
+
+        <Button
+            android:text="Add Contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonAdd"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp" />
+        <Button
+            android:id="@+id/buttonAddFav"
+            android:text="Add Favorites"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/buttonDelete"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp" />
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/lvContacts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/toolbar"
+        android:layout_above="@+id/navbar" />
+
+</android.widget.RelativeLayout>
+

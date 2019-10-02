@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">MyContactList</string>
+    <string name="contact">Contact</string>
+    <string name="address">Address</string>
+    <string name="homePhone">Home Phone:</string>
+    <string name="cellPhone">Cell Phone:</string>
+    <string name="Emailaddress">Email:</string>
+    <string name="change">Change</string>
+    <string name="birthday">Birthday:</string>
+    <string name="date">01/01/1970</string>
+    <string name="DatePick"></string>
+    <string name="textContactSort">Sort contacts by:</string>
+
+    <style name="Home">Home: </style>
+    <style name="Cell">Cell: </style>
+    <style name="Address">Address: </style>
+</resources>
